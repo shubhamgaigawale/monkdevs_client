@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import { Home } from "./Components/Home/Home";
+import { Footer } from "./Components/Footer";
+import { About } from "./Components/About";
+import { HeaderContainer } from "./Components/Header/HeaderContainer";
+import { StayInTouch } from "./Components/Home/StayInTouch";
+import { AboutUs } from "./Components/Home/AboutUs";
+import { Services } from "./Components/Home/Services";
+import { MobileAppDevelopment } from "./Components/Services/MobileAppDevelopment";
+import { WebAppDevelopment } from "./Components/Services/WebAppDevelopment";
+import { ZohoDevelopment } from "./Components/Services/ZohoDevelopment";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <HeaderContainer/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contactus" element={<StayInTouch />} />
+        <Route path="/mobile-app-development" element={<MobileAppDevelopment />} />
+        <Route path="/web-app-development" element={<WebAppDevelopment />} />
+        <Route path="/zoho-development" element={<ZohoDevelopment />} />
+
+      </Routes>
+      <Footer/>
     </div>
+
   );
 }
 
